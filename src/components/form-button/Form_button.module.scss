@@ -1,11 +1,17 @@
+@import "./../../App";
 .button{
   width: 200px;
   height: 40px;
-  box-shadow: 2px 3px 8px 0 #D75959;
-  border: 1px solid #D75959;
-  background: #051021;
+
+  border: 1px solid $orange;
+  background: $blue;
   border-radius: 11px;
-  color: #D75959;
+  color: $orange;
   font-weight: 700;
   font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover{
+    box-shadow: 2px 3px 8px 0 $orange;
+  }
 }

@@ -1,8 +1,8 @@
+@import "./../../App";
 .input{
   padding: 11px;
-  //display: block;
   background: none;
-  border: 1px solid #D75959;
+  border: 1px solid $orange;
   border-radius: 11px;
   width: 200px;
   height: 40px;
@@ -11,6 +11,6 @@
   font-size: 16px;
  color: white;
   &::placeholder{
-    color: #8a8a8a;
+    color: $gray;
   }
 }

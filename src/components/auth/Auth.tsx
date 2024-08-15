@@ -1,8 +1,11 @@
 import React from 'react';
+import Form from "../form/Form";
 
 function Auth() {
     return (
-        <div></div>
+        <div>
+            <Form />
+        </div>
     );
 }
 

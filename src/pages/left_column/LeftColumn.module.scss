@@ -1,6 +1,7 @@
+@import "./../../App";
 .column{
   display: flex;
   flex-direction: column;
   width: 579px;
-  background-color: #051021;
+  background-color: $blue;
 }
