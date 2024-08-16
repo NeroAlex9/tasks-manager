@@ -7,7 +7,7 @@ interface IProps {
 
 const TaskElement: React.FC<IProps> = ({text})=> {
   return <div className={styles.column}>
-    <input className={styles.column__checkbox} type='checkbox'/>
+    <input className={styles.column__checkbox} type='radio'/>
     <p className={styles.column__text}>{text}</p>
     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line x1="14.0941" y1="1.41108" x2="1.41108" y2="15.9059" stroke="#D75959" stroke-width="2"
