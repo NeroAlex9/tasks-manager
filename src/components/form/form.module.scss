@@ -1,6 +1,8 @@
 @import "./../../App";
 .form{
   display: flex;
+  width: 200px;
+ 
   flex-direction: column;
   &__inlet{
       font-weight: 700;

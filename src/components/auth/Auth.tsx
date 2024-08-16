@@ -1,12 +1,12 @@
-import React from 'react';
 import Form from "../form/Form";
+import styles from "./auth.module.scss";
 
 function Auth() {
-    return (
-        <div>
-            <Form />
-        </div>
-    );
+  return (
+    <div className={styles.auth}>
+      <Form />
+    </div>
+  );
 }
 
 export default Auth;
