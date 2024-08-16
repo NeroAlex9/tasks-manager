@@ -1,7 +1,7 @@
 @import "./../../App";
 .input{
-  padding: 11px;
   background: none;
+  box-sizing: border-box;
   border: 1px solid $orange;
   border-radius: 11px;
   width: 200px;
@@ -10,8 +10,9 @@
   font-weight: 400;
   font-size: 16px;
  color: white;
- margin-bottom: 10px;
+ margin-bottom: 30px;
   &::placeholder{
+    padding-left: 11px;
     color: $gray;
   }
 }

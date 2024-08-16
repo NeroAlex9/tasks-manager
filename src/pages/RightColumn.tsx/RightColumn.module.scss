@@ -1,9 +1,8 @@
 @import "./../../App";
 .column{
-  padding-top: 206px;
   display: flex;
   flex-direction: column;
-  width: 579px;
+  width: 100%;
   height: 100vh;
-  background-color: $blue;
+  background-color: white;
 }

@@ -1,0 +1,26 @@
+@import "./../../App";
+
+.welcome{
+    padding-top: 300px;
+    padding-left: 192px;
+    &__text{
+        font-family: Roboto;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56.25px;
+        padding-bottom: 147px;
+        &__span{
+            color: $orange;
+        }
+    }
+    &__subText{
+        display: flex;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 29.3px;
+        align-items: center;
+        &__text{
+            padding-left: 13px;
+        }
+    }
+}

@@ -6,12 +6,13 @@
   margin: 0 auto;
   flex-direction: column;
   &__inlet{
+    margin-bottom: 30px;
       font-weight: 700;
       font-size: 25px;
       color: #fff;
   }
   &__button{
-    margin-top: 10px;
+    margin-top: 30px;
     font-weight: 400;
     font-size: 16px;
     color: $orange;
@@ -20,7 +21,7 @@
     cursor: pointer;
     transition: all 0.2s;
     &:hover{
-      font-size: 17px;
+      opacity: 80%;
     }
   }
 }
