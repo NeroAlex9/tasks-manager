@@ -8,14 +8,32 @@
     line-height: 56.25px;        
     &__span{
         color: $orange;
+        font-family: Roboto;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56.25px;   
     }
 }
 
 .input{
     padding-top: 133px;
     padding-left: 272px;
+    width: 236px;
     &__task{
-        
+        font-family: Roboto;
+        width: 236px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18.75px;
+        padding-left: 18px;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid $orange;
+    }
+    &__buttons{
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-between;
     }
    
     }

@@ -6,5 +6,16 @@
   border: 1px solid $orange;
   background: white;
   color: $orange;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.41px;
+  box-shadow: 2px 3px 8px 0px $orange;
   
+}
+.black{
+  box-shadow: 2px 3px 8px 0px black;
+  border: 1px solid black;
+  color: black;
+
 }
