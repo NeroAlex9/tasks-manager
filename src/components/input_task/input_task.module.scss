@@ -1,0 +1,22 @@
+@import "./../../App";
+.text{
+    padding-top: 40px;
+    padding-left: 188px;
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56.25px;        
+    &__span{
+        color: $orange;
+    }
+}
+
+.input{
+    padding-top: 133px;
+    padding-left: 272px;
+    &__task{
+        
+    }
+   
+    }
+    
