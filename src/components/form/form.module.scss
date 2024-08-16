@@ -1,8 +1,9 @@
 @import "./../../App";
 .form{
   display: flex;
-  width: 200px;
- 
+  align-items: center;
+  width: 225px;
+  margin: 0 auto;
   flex-direction: column;
   &__inlet{
       font-weight: 700;
@@ -10,10 +11,16 @@
       color: #fff;
   }
   &__button{
+    margin-top: 10px;
     font-weight: 400;
     font-size: 16px;
     color: $orange;
     background: $blue;
     border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover{
+      font-size: 17px;
+    }
   }
 }
