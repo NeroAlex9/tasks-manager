@@ -5,7 +5,12 @@ interface IProps {
   text: string;
 }
 export const Task_button: React.FC<IProps> = ({ onClick, text }) => (
-  <button className={styles.button} onClick={onClick}>
+  <button
+    className={
+      text === "Добавить" ? `${styles.button} + ${styles.black}` : styles.button
+    }
+    onClick={onClick}
+  >
     {text}
   </button>
 );

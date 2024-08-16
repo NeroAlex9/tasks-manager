@@ -6,7 +6,7 @@ function Input_task() {
   return (
     <>
       <h1 className={styles.text}>
-        <span className={styles.text__span}>Менеджер</span> задач
+        <span className={styles.text__span}>Менеджер</span> Задач
       </h1>
       <div className={styles.input}>
         <input
