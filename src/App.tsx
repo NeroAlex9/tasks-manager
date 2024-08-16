@@ -1,13 +1,14 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./App.scss";
 import LeftColumn from "./pages/left_column/LeftColumn";
-
+import RightColumn from "./pages/RightColumn.tsx/RightColumn";
 
 function App() {
   return (
-      <div className="App">
-        <LeftColumn/>
-      </div>
+    <div className="App">
+      <LeftColumn />
+      <RightColumn />
+    </div>
   );
 }
 
