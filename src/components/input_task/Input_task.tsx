@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./input_task.module.scss";
-import { Task_button } from "../task_button/Task_button";
+import  {TaskButton} from "../task_button/Task_button";
 
-function Input_task() {
+function InputTask() {
   return (
     <>
       <h1 className={styles.text}>
@@ -14,11 +14,11 @@ function Input_task() {
           placeholder="Название задачи"
         ></input>
         <div className={styles.input__buttons}>
-          <Task_button onClick={() => {}} text="Очистить" />
-          <Task_button onClick={() => {}} text="Добавить" />
+          <TaskButton onClick={() => {}} text="Очистить" />
+          <TaskButton onClick={() => {}} text="Добавить" />
         </div>
       </div>
     </>
   );
 }
-export default Input_task;
+export default InputTask;
