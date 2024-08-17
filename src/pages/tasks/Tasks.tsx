@@ -7,8 +7,12 @@ function Tasks() {
   return (
     <div className={styles.column}>
       <InputTask />
-      <TaskElement text='Task1' />
+        <div className={styles.tasks}>
         <TaskElement text='Имеются изображения разных размеров(ширина, высота), которые выводятся с помощью <img src=""> . ' />
+
+
+
+        </div>
     </div>
   );
 }

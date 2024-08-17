@@ -36,7 +36,14 @@
   }
 
   &__svg{
+    cursor: pointer;
     width: 17px;
+  }
+
+}
+@media (max-width: 860px) {
+  .column{
+    margin-left: 10px;
   }
 
 }
