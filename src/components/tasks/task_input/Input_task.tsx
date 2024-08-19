@@ -1,5 +1,5 @@
 import React from "react";
-import './../../App'
+import '../../../App'
 import styles from "./input_task.module.scss";
 import  {TaskButton} from "../task_button/Task_button";
 

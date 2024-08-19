@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormButton} from "../form-button/Form_button";
+import {FormButton} from "../form/form_button/Form_button";
 import {NavLink} from "react-router-dom";
 import styles from './output.module.scss'
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./tasks.module.scss";
-import InputTask from "../../components/task_input/Input_task";
-import TaskElement from "../../components/task_element/task_element";
+import InputTask from "./task_input/Input_task";
+import TaskElement from "./task_element/task_element";
 
 function Tasks() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import LeftColumn from "./pages/left_column/LeftColumn";
+import LeftColumn from "./pages/LeftColumn/LeftColumn";
 import RightColumn from "./pages/RightColumn/RightColumn";
 
 function App() {
