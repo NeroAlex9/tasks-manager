@@ -2,14 +2,18 @@ import React from "react";
 import { FormInput } from "../form-input/FormInput";
 import { FormButton } from "../form-button/Form_button";
 import styles from "./form.module.scss";
+import { NavLink } from "react-router-dom";
 
 function Form() {
   return (
     <form className={styles.form}>
-      <h2 className={styles.form__inlet}>Регистрация</h2>
+      <h2 className={styles.form__inlet}>Вход</h2>
       <FormInput value={"#"} type={"text"} />
       <FormInput value={"#"} type={"password"} />
-      <FormButton onClick={() => {}} text={"Войти"} />
+      <NavLink to="/tasks">
+        <FormButton onClick={() => {}} text={"Войти"} />{" "}
+      </NavLink>
+
       <button className={styles.form__button} onClick={() => {}}>
         Зарегистрироваться
       </button>
