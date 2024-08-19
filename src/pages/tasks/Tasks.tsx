@@ -9,9 +9,6 @@ function Tasks() {
       <InputTask />
         <div className={styles.tasks}>
         <TaskElement text='Имеются изображения разных размеров(ширина, высота), которые выводятся с помощью <img src=""> . ' />
-
-
-
         </div>
     </div>
   );

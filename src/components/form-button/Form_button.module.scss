@@ -12,5 +12,6 @@
   transition: all 0.2s;
   &:hover{
     box-shadow: 2px 3px 8px 0 $orange;
+    transform: scale(1.1);
   }
 }

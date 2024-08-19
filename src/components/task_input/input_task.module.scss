@@ -32,7 +32,9 @@
         border: none;
         border-bottom: 1px solid $orange;
         outline: 0;
-
+        &:focus{
+            transform: scale(1.1);
+        }
 
         &::placeholder{
             padding-left: 18px;

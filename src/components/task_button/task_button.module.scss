@@ -3,23 +3,15 @@
   width: 100px;
   height: 35px;
   border-radius: 11px;
-  border: 1px solid $orange;
+  border: 1px solid;
   background: white;
-  color: $orange;
   font-family: Roboto;
   font-size: 14px;
   font-weight: 700;
   line-height: 16.41px;
   cursor: pointer;
   &:hover{
-    box-shadow: 2px 3px 8px 0px $orange;
-  }
-
-}
-.black{
-  border: 1px solid black;
-  color: black;
-  &:hover{
-    box-shadow: 2px 3px 8px 0px black;
+    transform:scale(1.1);
+    box-shadow: 2px 3px 8px 0px;
   }
 }

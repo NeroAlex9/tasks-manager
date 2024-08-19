@@ -14,5 +14,9 @@
   &::placeholder{
     padding-left: 11px;
     color: $gray;
+
+  }
+  &:focus{
+    transform: scale(1.1);
   }
 }

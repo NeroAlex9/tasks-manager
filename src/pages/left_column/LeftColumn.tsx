@@ -1,11 +1,17 @@
 import React from 'react';
 import styles from './LeftColumn.module.scss'
 import Auth from "../../components/auth/Auth";
+import { Route, Routes} from "react-router-dom";
+import Output from "../../components/output/Output";
 
 function LeftColumn() {
     return (
         <div className={styles.column}>
-            <Auth/>
+            <Routes>
+                <Route path='/' element={<Auth/>} />
+                <Route path='tasks' element={<Output/>} />
+            </Routes>
+
         </div>
     );
 }

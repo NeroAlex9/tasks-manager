@@ -1,4 +1,5 @@
 import React from "react";
+import './../../App'
 import styles from "./input_task.module.scss";
 import  {TaskButton} from "../task_button/Task_button";
 
@@ -14,8 +15,8 @@ function InputTask() {
           placeholder="Название задачи"
         ></input>
         <div className={styles.input__buttons}>
-          <TaskButton onClick={() => {}} text="Очистить" />
-          <TaskButton onClick={() => {}} text="Добавить" />
+          <TaskButton onClick={() => {}} color='#D75959' text="Очистить" />
+          <TaskButton onClick={() => {}} color='black' text="Добавить" />
         </div>
       </div>
     </>
