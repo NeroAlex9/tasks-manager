@@ -2,13 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import Form from "../form/Form";
 import styles from "./auth.module.scss";
 
-interface IProps {
+interface IAuth {
   formName: string;
   textButton: string;
   textLink: string;
 }
 
-const Auth: React.FC<IProps> = ({ formName, textButton, textLink }) => {
+const Auth: React.FC<IAuth> = ({ formName, textButton, textLink }) => {
   return (
     <div className={styles.auth}>
       <Routes>
