@@ -9,6 +9,7 @@ function RightColumn() {
     <div className={styles.column}>
       <Routes>
         <Route path="/" element={<Welcome />} />
+        <Route path="/register" element={<Welcome />} />
         <Route path="/tasks" element={<Tasks />} />
       </Routes>
     </div>
