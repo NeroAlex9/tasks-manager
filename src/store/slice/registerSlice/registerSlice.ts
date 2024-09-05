@@ -13,7 +13,6 @@ const initialState: IRegisterState = {
     password:'',
     people: []
 }
-debugger;
 
 export const registerSlice = createSlice({
     name: "Register",
@@ -21,9 +20,12 @@ export const registerSlice = createSlice({
     reducers:{
         createLogin: (state, action: PayloadAction<string>)=>{
             state.login = action.payload
+        },
+        createPassword: (state, action: PayloadAction<any>)=>{
+            state.password = action.payload
         }
     }
 })
 
-export const {createLogin} = registerSlice.actions
+export const {createLogin, createPassword} = registerSlice.actions
 export default registerSlice.reducer
