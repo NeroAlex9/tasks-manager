@@ -10,13 +10,11 @@ interface IRegister {
 const Register: React.FC<IRegister> = ({ formName, textButton, textLink }) => {
   return (
     <div className={styles.auth}>
-     
             <Form
               formName={formName}
               textButton={textButton}
               textLink={textLink}
             />
-      
     </div>
   );
 };
