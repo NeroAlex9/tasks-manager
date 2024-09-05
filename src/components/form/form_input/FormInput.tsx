@@ -10,6 +10,6 @@ export const FormInput: React.FC<IFormInput> = ({ value, text, type }) => (
   <input
     className={styles.input}
     type={type}
-    placeholder={text === "login" ? "Логин" : "Пароль"}
+    placeholder={text}
   />
 );

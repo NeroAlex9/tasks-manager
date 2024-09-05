@@ -3,6 +3,7 @@ import styles from "./LeftColumn.module.scss";
 import Auth from "../../components/auth/Auth";
 import { Route, Routes } from "react-router-dom";
 import Output from "../../components/output/Output";
+import Register from "../../components/register/Register";
 
 function LeftColumn() {
   return (
@@ -21,7 +22,7 @@ function LeftColumn() {
         <Route
           path="/register"
           element={
-            <Auth
+            <Register
               formName={"Регистрация"}
               textButton={"Зарегистрироваться"}
               textLink={"Вход"}

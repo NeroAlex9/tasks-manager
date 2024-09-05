@@ -14,8 +14,11 @@ const Form: React.FC<IForm> = ({ formName, textButton, textLink }) => {
   return (
     <form className={styles.form}>
       <h2 className={styles.form__inlet}>{formName}</h2>
-      <FormInput value={"#"} type={"text"} text={"login"} />
-      <FormInput value={"#"} type={"password"} text={"password"} />
+      <FormInput value={"#"} type={"text"} text={"Логин"} />
+      <FormInput value={"#"} type={"password"} text={"Пароль"} />
+      {textLink === "Вход" 
+      ? <FormInput value={"#"} type={"password"} text={"Повторите пароль"} /> 
+      : ""}
       <NavLink to="/tasks">
         <FormButton onClick={() => {}} text={textButton} />{" "}
       </NavLink>
