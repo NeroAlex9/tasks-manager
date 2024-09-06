@@ -48,10 +48,14 @@ onChange={(e)=>setRepeatPassword(e.target.value)}
 ? styles.form__passwordOk
 : styles.form__passwordError
 }>Пароли не совпадают!</p>
-      <NavLink to="/">
-        <FormButton onClick={() => {
-          dispatch(createUser())
-        }} text={textButton} />{" "}
+      <NavLink to={password==repeatPassword 
+        ?"/"
+        :''}>
+        <FormButton onClick={
+          password===repeatPassword
+          ? () => {dispatch(createUser())}
+          :()=>{}
+          } text={textButton} />{" "}
       </NavLink>
       <NavLink to={textLink === "Вход" ? "/" : "/register"}>
         <button className={styles.form__button}>
