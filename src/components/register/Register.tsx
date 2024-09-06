@@ -17,7 +17,6 @@ const Register: React.FC<IRegister> = ({ formName, textButton, textLink }) => {
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
 useEffect(()=>{
-  console.log(password, repeatPassword)
   dispatch(createLogin(login))
   dispatch(createPassword(password))
 },[dispatch,login,password,repeatPassword])
@@ -48,11 +47,11 @@ onChange={(e)=>setRepeatPassword(e.target.value)}
 ? styles.form__passwordOk
 : styles.form__passwordError
 }>Пароли не совпадают!</p>
-      <NavLink to={password==repeatPassword 
+      <NavLink to={password===repeatPassword && login.length>0 && password.length>0
         ?"/"
         :''}>
         <FormButton onClick={
-          password===repeatPassword
+          password===repeatPassword && login.length>0 && password.length>0
           ? () => {dispatch(createUser())}
           :()=>{}
           } text={textButton} />{" "}
