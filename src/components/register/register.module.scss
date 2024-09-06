@@ -1,3 +1,49 @@
-.auth{
-    
+@import "../../App.scss";
+.input{
+  background: none;
+  box-sizing: border-box;
+  border: 1px solid $orange;
+  border-radius: 11px;
+  width: 200px;
+  height: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+ color: white;
+ margin-bottom: 30px;
+  &::placeholder{
+    padding-left: 11px;
+    color: $gray;
+
+  }
+  &:focus{
+    transform: scale(1.1);
+  }
 }
+.form{
+    display: flex;
+    align-items: center;
+    width: 225px;
+    margin: 0 auto;
+    flex-direction: column;
+    &__inlet{
+      margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 25px;
+        color: #fff;
+    }
+    &__button{
+      margin-top: 30px;
+      font-weight: 400;
+      font-size: 16px;
+      color: $orange;
+      background: $blue;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover{
+        opacity: 80%;
+  
+      }
+    }
+  }

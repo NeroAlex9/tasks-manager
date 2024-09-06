@@ -14,6 +14,7 @@ const initialState: IRegisterState = {
     people: []
 }
 
+
 export const registerSlice = createSlice({
     name: "Register",
     initialState,
@@ -23,9 +24,13 @@ export const registerSlice = createSlice({
         },
         createPassword: (state, action: PayloadAction<any>)=>{
             state.password = action.payload
+        },
+        createUser:(state)=>{
+            state.people.push({id:state.id, login:state.login, password:state.password})
+            state.id+=1
         }
     }
 })
 
-export const {createLogin, createPassword} = registerSlice.actions
+export const {createLogin, createPassword, createUser} = registerSlice.actions
 export default registerSlice.reducer
