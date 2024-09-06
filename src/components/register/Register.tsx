@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import styles from "./register.module.scss";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { createLogin, createPassword, createUser } from "../../store/slice/registerSlice/registerSlice";
 import { useEffect, useState } from "react";
 import { FormButton } from "../form_button/Form_button";
+import { RootState } from "../../store/store";
 
 interface IRegister {
   formName: string;
@@ -12,11 +13,13 @@ interface IRegister {
 }
 
 const Register: React.FC<IRegister> = ({ formName, textButton, textLink }) => {
+  // const BD = useSelector((state: RootState)=> state.register.people)
   const dispatch = useDispatch();
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
 useEffect(()=>{
+  // console.log(BD)
   dispatch(createLogin(login))
   dispatch(createPassword(password))
 },[dispatch,login,password,repeatPassword])
