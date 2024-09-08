@@ -1,9 +1,8 @@
 import {NavLink} from "react-router-dom";
 import styles from "./auth.module.scss";
 import {FormButton} from "../form_button/Form_button";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {authLogin, authPassword, createAuthData} from "../../store/slice/authSlice/authSlice";
 import {RootState} from "../../store/store";
 
 interface IAuth {
@@ -13,24 +12,26 @@ interface IAuth {
 }
 
 const Auth: React.FC<IAuth> = ({formName, textButton, textLink}) => {
-    const dispatch = useDispatch();
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
-    const usersData = useSelector((state: RootState)=> state.register.people)
-    const userAuthData = useSelector((state: RootState)=> state.auth.user)
+    const [isAuth, setIsAuth] = useState(false)
+    const usersData = useSelector((state: RootState) => state.register.people)
     useEffect(() => {
-        // console.log(BD)
-        dispatch(authLogin(login))
-        dispatch(authPassword(password))
-    }, [dispatch, login, password])
+    }, [isAuth])
 
-    let seearchUser = ()=>{
-        dispatch(createAuthData())
+    let logIn = () => {
+        usersData.find((item) => {
+            if (item.login === login && item.password === password) {
+                setIsAuth(true)
+            }
+        })
     }
-
-    // let logIn = ()=>{
-    //     usersData.
-    // }
+    let navLinkTo = () => {
+        if (isAuth) {
+            return '/tasks'
+        }
+        return ''
+    }
 
     return (
         <form className={styles.form}>
@@ -47,8 +48,9 @@ const Auth: React.FC<IAuth> = ({formName, textButton, textLink}) => {
                 placeholder="Пароль"
                 autoComplete='new-password'
             />
-            <NavLink to="/tasks">
+            <NavLink to={navLinkTo()}>
                 <FormButton onClick={() => {
+                    logIn()
                 }} text={textButton}/>{" "}
             </NavLink>
             <NavLink to="/register">
