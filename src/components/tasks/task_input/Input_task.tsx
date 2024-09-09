@@ -4,7 +4,7 @@ import styles from "./input_task.module.scss";
 import type { RootState } from '../../../store/store'
 import  {TaskButton} from "../task_button/Task_button";
 import { useDispatch, useSelector } from "react-redux";
-import { createTask } from "../../../store/slice/tasksSlice/tasksSlice";
+import { addTask, createTask } from "../../../store/slice/tasksSlice/tasksSlice";
 
 
 
@@ -14,11 +14,12 @@ function InputTask() {
   const dispatch = useDispatch()
 const[task, setTask]=useState('')
 useEffect(()=>{
+  console.log(tasksArr)
 dispatch(createTask(task))
-},[])
+},[dispatch,task])
 
-let addTask =()=>{
-  
+let addNewTask = ()=>{
+  return ()=>dispatch(addTask())
 }
 
   return (
@@ -34,7 +35,7 @@ let addTask =()=>{
         ></input>
         <div className={styles.input__buttons}>
           <TaskButton onClick={() => {}} color='#D75959' text="Очистить" />
-          <TaskButton onClick={() => {}} color='black' text="Добавить" />
+          <TaskButton onClick={addNewTask()} color='black' text="Добавить" />
         </div>
       </div>
     </>
