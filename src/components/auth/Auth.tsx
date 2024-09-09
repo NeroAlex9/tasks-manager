@@ -5,35 +5,29 @@ import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {RootState} from "../../store/store";
 
-interface IAuth {
-    formName: string;
-    textButton: string;
-    textLink: string;
-}
 
-const Auth: React.FC<IAuth> = ({formName, textButton, textLink}) => {
+const Auth = () => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [isAuth, setIsAuth] = useState(false)
     const usersData = useSelector((state: RootState) => state.register.people)
     const navigate = useNavigate()
     useEffect(() => {
-        if( isAuth){
-            navigate('/tasks')
-        }
-    },[])
+        if(isAuth){navigate('/tasks')}
+    },[isAuth,navigate])
 
     let logIn = () => {
         usersData.find((item) => {
             if (item.login === login && item.password === password) {
-                setIsAuth(true)
+               return setIsAuth(true)
             }
+            return ''
         })
     }
 
     return (
         <form className={styles.form}>
-            <h2 className={styles.form__inlet}>{formName}</h2>
+            <h2 className={styles.form__inlet}>Вход</h2>
             <input
                 onChange={e => setLogin(e.target.value)}
                 className={styles.input}
@@ -49,11 +43,11 @@ const Auth: React.FC<IAuth> = ({formName, textButton, textLink}) => {
             <NavLink to={isAuth ? '/tasks' : '' }>
                 <FormButton onClick={() => {
                     logIn()
-                }} text={textButton}/>{" "}
+                }} text="Войти"/>{" "}
             </NavLink>
             <NavLink to="/register">
                 <button className={styles.form__button}>
-                    {textLink}
+                    Зарегистрироваться
                 </button>
             </NavLink>
         </form>

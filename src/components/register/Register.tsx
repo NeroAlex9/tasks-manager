@@ -6,14 +6,9 @@ import {useEffect, useState} from "react";
 import {FormButton} from "../form_button/Form_button";
 
 
-interface IRegister {
-    formName: string;
-    textButton: string;
-    textLink: string;
-}
 
-const Register: React.FC<IRegister> = ({formName, textButton, textLink}) => {
-    const dispatch = useDispatch();
+const Register = () => {
+    const dispatch = useDispatch()
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [repeatPassword, setRepeatPassword] = useState('')
@@ -44,7 +39,7 @@ const Register: React.FC<IRegister> = ({formName, textButton, textLink}) => {
 
     return (
         <form className={styles.form}>
-            <h2 className={styles.form__inlet}>{formName}</h2>
+            <h2 className={styles.form__inlet}>Регистрация</h2>
             <input
                 type="string"
                 onChange={(e) => setLogin(e.target.value)}
@@ -68,11 +63,11 @@ const Register: React.FC<IRegister> = ({formName, textButton, textLink}) => {
             />
             {checkRepeatPassword()}
             <NavLink to={checkRegisterData()}>
-                <FormButton onClick={dispatchNewUser()} text={textButton}/>{" "}
+                <FormButton onClick={dispatchNewUser()} text="Зарегистрироваться"/>{" "}
             </NavLink>
             <NavLink to="/">
                 <button className={styles.form__button}>
-                    {textLink}
+                    Вход
                 </button>
             </NavLink>
         </form>

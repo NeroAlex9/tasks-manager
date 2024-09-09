@@ -9,26 +9,8 @@ function LeftColumn() {
     return (
         <div className={styles.column}>
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <Auth
-                            formName={"Вход"}
-                            textButton={"Войти"}
-                            textLink={"Зарегистрироваться"}
-                        />
-                    }
-                />
-                <Route
-                    path="/register"
-                    element={
-                        <Register
-                            formName={"Регистрация"}
-                            textButton={"Зарегистрироваться"}
-                            textLink={"Вход"}
-                        />
-                    }
-                />
+                <Route path="/"element={<Auth/>}/>
+                <Route path="/register" element={<Register/>}/>
                 <Route path="tasks" element={<Output/>}/>
             </Routes>
         </div>
