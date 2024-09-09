@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import '../../../App'
 import styles from "./input_task.module.scss";
+import type { RootState } from '../../../store/store'
 import  {TaskButton} from "../task_button/Task_button";
+import { useDispatch, useSelector } from "react-redux";
+import { createTask } from "../../../store/slice/tasksSlice/tasksSlice";
+
+
 
 function InputTask() {
+  
+  const tasksArr = useSelector((state: RootState) => state.tasks)
+  const dispatch = useDispatch()
+const[task, setTask]=useState('')
+useEffect(()=>{
+dispatch(createTask(task))
+},[])
+
+let addTask =()=>{
+  
+}
+
   return (
     <>
       <h1 className={styles.text}>
@@ -11,6 +28,7 @@ function InputTask() {
       </h1>
       <div className={styles.input}>
         <input
+        onChange={e=>setTask(e.target.value)}
           className={styles.input__task}
           placeholder="Название задачи"
         ></input>

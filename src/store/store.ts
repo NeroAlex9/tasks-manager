@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import registerReducer from "./slice/registerSlice/registerSlice";
+import tasksReducer from "./slice/tasksSlice/tasksSlice";
 
 export const store = configureStore({
     reducer:{
         register:registerReducer,
+        tasks:tasksReducer
     }
 })
 
