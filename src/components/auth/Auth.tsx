@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import styles from "./auth.module.scss";
 import {FormButton} from "../form_button/Form_button";
 import {useSelector} from "react-redux";
@@ -16,8 +16,12 @@ const Auth: React.FC<IAuth> = ({formName, textButton, textLink}) => {
     const [password, setPassword] = useState('')
     const [isAuth, setIsAuth] = useState(false)
     const usersData = useSelector((state: RootState) => state.register.people)
+    const navigate = useNavigate()
     useEffect(() => {
-    }, [isAuth])
+        if( isAuth){
+            navigate('/tasks')
+        }
+    },[])
 
     let logIn = () => {
         usersData.find((item) => {
@@ -25,12 +29,6 @@ const Auth: React.FC<IAuth> = ({formName, textButton, textLink}) => {
                 setIsAuth(true)
             }
         })
-    }
-    let navLinkTo = () => {
-        if (isAuth) {
-            return '/tasks'
-        }
-        return ''
     }
 
     return (
@@ -48,7 +46,7 @@ const Auth: React.FC<IAuth> = ({formName, textButton, textLink}) => {
                 placeholder="Пароль"
                 autoComplete='new-password'
             />
-            <NavLink to={navLinkTo()}>
+            <NavLink to={isAuth ? '/tasks' : '' }>
                 <FormButton onClick={() => {
                     logIn()
                 }} text={textButton}/>{" "}
