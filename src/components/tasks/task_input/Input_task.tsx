@@ -19,6 +19,13 @@ let addNewTask = ()=>{
   setTask('')
 }
 
+let keyDownEnter = (event: React.KeyboardEvent)=>{
+      if(task && event.key==='Enter'){
+          addNewTask()
+      }
+}
+
+
   return (
     <>
       <h1 className={styles.text}>
@@ -30,6 +37,7 @@ let addNewTask = ()=>{
           className={styles.input__task}
           placeholder="Название задачи"
           value={task}
+        onKeyDown={keyDownEnter}
         ></input>
         <div className={styles.input__buttons}>
           <TaskButton onClick={()=>setTask('')} color='#D75959' text="Очистить" />
