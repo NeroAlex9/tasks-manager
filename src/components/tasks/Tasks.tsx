@@ -8,11 +8,11 @@ import type { RootState } from '../../store/store'
 function Tasks() {
   
 const tasksArr = useSelector((state: RootState) => state.tasks.tasks)
-
+    const idUser = useSelector((state: RootState) => state.tasks.idUser)
 
 const addedTask=()=>{
   return  tasksArr.map((task)=>{
-      if(task){
+      if(task && task.idUser === idUser){
           return <TaskElement text={task.text} taskId={task.idTask} />
       }
      return ''

@@ -19,6 +19,11 @@ export const tasksSlice = createSlice({
     name: "Tasks",
     initialState,
     reducers:{
+        addIdUSer:(state, action: PayloadAction<number>)=>{
+            debugger;
+            state.idUser=action.payload
+
+        },
         createTask: (state, action: PayloadAction<string>)=>{
             state.text = action.payload
         },
@@ -38,5 +43,5 @@ export const tasksSlice = createSlice({
     }
 })
 
-export const {createTask, addTask, deleteTask} = tasksSlice.actions
+export const {addIdUSer,createTask, addTask, deleteTask} = tasksSlice.actions
 export default tasksSlice.reducer

@@ -1,12 +1,14 @@
 import {NavLink, useNavigate} from "react-router-dom";
 import styles from "./auth.module.scss";
 import {FormButton} from "../form_button/Form_button";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {RootState} from "../../store/store";
+import {addIdUSer} from "../../store/slice/tasksSlice/tasksSlice";
 
 
 const Auth = () => {
+    const dispatch=useDispatch()
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [isAuth, setIsAuth] = useState(false)
@@ -19,7 +21,7 @@ const Auth = () => {
     let logIn = () => {
         usersData.find((item) => {
             if (item.login === login && item.password === password) {
-               return setIsAuth(true)
+               return (setIsAuth(true), dispatch(addIdUSer(item.id)))
             }
             return ''
         })
