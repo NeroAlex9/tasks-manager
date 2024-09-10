@@ -25,10 +25,18 @@ export const tasksSlice = createSlice({
         addTask:(state)=>{
             state.tasks.unshift({idUser:state.idUser, idTask:state.idTask, text:state.text})
             state.idTask+=1
+        },
+        deleteTask:(state,action: PayloadAction<number> )=>{
+
+            state.tasks.find((item, index)=>{
+                if(item && item.idTask===action.payload){
+                    delete state.tasks[index]
+                }
+            })
         }
-       
+
     }
 })
 
-export const {createTask, addTask} = tasksSlice.actions
+export const {createTask, addTask, deleteTask} = tasksSlice.actions
 export default tasksSlice.reducer

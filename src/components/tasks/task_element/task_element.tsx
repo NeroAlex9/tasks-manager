@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styles from "./task_element.module.scss";
+import {deleteTask} from "../../../store/slice/tasksSlice/tasksSlice";
+import {useDispatch} from "react-redux";
 
 interface ITaskElement {
   text: string;
+  taskId: number;
 }
 
-const TaskElement: React.FC<ITaskElement> = ({ text }) => {
-
+const TaskElement: React.FC<ITaskElement> = ({ text, taskId }) => {
+const dispatch = useDispatch()
 
   return (
     <div className={styles.column}>
@@ -18,6 +21,9 @@ const TaskElement: React.FC<ITaskElement> = ({ text }) => {
       className={styles.column__text}
       >{text}</p>
       <svg
+          onClick={()=>{
+              dispatch(deleteTask(taskId))
+          }}
         className={styles.column__svg}
         width="16"
         height="17"
