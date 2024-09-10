@@ -14,7 +14,6 @@ const initialState: IRegisterState = {
     people: []
 }
 
-
 export const registerSlice = createSlice({
     name: "Register",
     initialState,
