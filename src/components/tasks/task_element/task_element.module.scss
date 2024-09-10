@@ -16,9 +16,6 @@
     padding: 10px;
     word-break: normal;
   }
-  &__textDone{
-    text-decoration: line-through
-  }
 
   &__checkbox{
     display: inline-block;
@@ -29,16 +26,8 @@
     border: 2px solid #00C1EB;
     cursor: pointer;
     transition: all 0.2s ease;
-    &:hover{
-      background-color: #05EB00;
-      border: 2px solid #05EB00;
-      transform: scale(1.1);
-    }
   }
-  &__checkboxDone{
-    background-color: #05EB00;
-    border: 2px solid #05EB00;
-  }
+  
 
   &__svg{
     cursor: pointer;

@@ -6,25 +6,17 @@ interface ITaskElement {
 }
 
 const TaskElement: React.FC<ITaskElement> = ({ text }) => {
-  const [taskDone, setTaskDone] = useState(styles.column__checkbox);
-  const [textDone, setTextDone] = useState(styles.column__text);
+
 
   return (
     <div className={styles.column}>
       <div
-        className={taskDone}
-        onClick={() => {
-          taskDone === styles.column__checkbox
-            ? setTaskDone(
-                styles.column__checkbox + " " + styles.column__checkboxDone
-              )
-            : setTaskDone(styles.column__checkbox);
-          textDone === styles.column__text
-            ? setTextDone(styles.column__text + " " + styles.column__textDone)
-            : setTextDone(styles.column__text);
-        }}
+        className={styles.column__checkbox}
+        onClick={() => {}}
       />
-      <p className={textDone}>{text}</p>
+      <p 
+      className={styles.column__text}
+      >{text}</p>
       <svg
         className={styles.column__svg}
         width="16"

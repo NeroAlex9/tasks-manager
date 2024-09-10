@@ -9,12 +9,11 @@ import { addTask, createTask } from "../../../store/slice/tasksSlice/tasksSlice"
 
 
 function InputTask() {
-  
-  const tasksArr = useSelector((state: RootState) => state.tasks)
+  // const tasksArr = useSelector((state: RootState) => state.tasks)
   const dispatch = useDispatch()
 const[task, setTask]=useState('')
 useEffect(()=>{
-  console.log(tasksArr)
+  // console.log(tasksArr)
 dispatch(createTask(task))
 },[dispatch,task])
 
