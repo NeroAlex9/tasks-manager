@@ -9,7 +9,7 @@ import {RootState} from "../../store/store";
 const Auth = () => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
-    const [isAuth, setIsAuth] = useState(true)
+    const [isAuth, setIsAuth] = useState(false)
     const usersData = useSelector((state: RootState) => state.register.people)
     const navigate = useNavigate()
     useEffect(() => {

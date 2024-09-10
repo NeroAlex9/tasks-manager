@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./task_element.module.scss";
 import {deleteTask} from "../../../store/slice/tasksSlice/tasksSlice";
 import {useDispatch} from "react-redux";

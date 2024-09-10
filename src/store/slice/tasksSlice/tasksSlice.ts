@@ -27,11 +27,11 @@ export const tasksSlice = createSlice({
             state.idTask+=1
         },
         deleteTask:(state,action: PayloadAction<number> )=>{
-
             state.tasks.find((item, index)=>{
                 if(item && item.idTask===action.payload){
-                    delete state.tasks[index]
+                   delete state.tasks[index]
                 }
+                return ''
             })
         }
 

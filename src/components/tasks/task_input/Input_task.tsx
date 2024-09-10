@@ -33,7 +33,7 @@ let addNewTask = ()=>{
         ></input>
         <div className={styles.input__buttons}>
           <TaskButton onClick={()=>setTask('')} color='#D75959' text="Очистить" />
-          <TaskButton onClick={addNewTask} color='black' text="Добавить" />
+          <TaskButton onClick={task ? addNewTask : ()=>{}} color='black' text="Добавить" />
         </div>
       </div>
     </>
