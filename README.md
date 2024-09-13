@@ -1,7 +1,14 @@
-Для старта проекта npm start.
+Проект был протестирован на MAC OS / Windows
+Проект сделан с использованием библиотеки react
+Версия nodejs - 20.17.0
+Версия npm - 10.8.3
+Запуск проекта стандартный - npm install -> npm start
+Проект запускается на localhost:3000
+
 Стек:
 - HTMl
 - SCSS
+- JS
 - React
 - Redux Toolkit
 - 
