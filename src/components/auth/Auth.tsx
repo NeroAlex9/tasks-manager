@@ -5,23 +5,24 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {RootState} from "../../store/store";
 import {addIdUSer} from "../../store/slice/tasksSlice/tasksSlice";
+import { isAuth } from "../../store/slice/registerSlice/registerSlice";
 
 
 const Auth = () => {
     const dispatch=useDispatch()
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
-    const [isAuth, setIsAuth] = useState(false)
     const usersData = useSelector((state: RootState) => state.register.people)
+    const isAuthState = useSelector((state: RootState) => state.register.isAuth)
     const navigate = useNavigate()
     useEffect(() => {
-        if(isAuth){navigate('/tasks')}
-    },[isAuth,navigate])
+        if(isAuthState){navigate('/tasks')}
+    },[isAuthState,navigate])
 
     let logIn = () => {
         usersData.find((item) => {
             if (item.login === login && item.password === password) {
-               return (setIsAuth(true), dispatch(addIdUSer(item.id)))
+               return (dispatch(isAuth(true)), dispatch(addIdUSer(item.id)))
             }
             return ''
         })
@@ -42,7 +43,7 @@ const Auth = () => {
                 placeholder="Пароль"
                 autoComplete='new-password'
             />
-            <NavLink to={isAuth ? '/tasks' : '' }>
+            <NavLink to={isAuthState ? '/tasks' : '' }>
                 <FormButton onClick={() => {
                     logIn()
                 }} text="Войти"/>{" "}
