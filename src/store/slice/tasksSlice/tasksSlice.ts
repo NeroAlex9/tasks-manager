@@ -20,7 +20,6 @@ export const tasksSlice = createSlice({
     initialState,
     reducers:{
         addIdUSer:(state, action: PayloadAction<number>)=>{
-            debugger;
             state.idUser=action.payload
 
         },

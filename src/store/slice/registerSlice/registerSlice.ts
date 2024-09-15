@@ -33,6 +33,7 @@ export const registerSlice = createSlice({
         isAuth:(state, action: PayloadAction<boolean>)=>{
             state.isAuth=action.payload
         }
+
     }
 })
 
