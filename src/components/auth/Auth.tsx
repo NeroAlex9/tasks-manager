@@ -17,33 +17,41 @@ const Auth = () => {
     const isAuthState = useSelector((state: RootState) => state.register.isAuth)
     const navigate = useNavigate()
 
-    let checkError = () => {
-        let oldUser = usersData.find((item) => item.login === login)
+    const checkError = () => {
+        const oldUser = usersData.find((item) => item.login === login);
         if (login.length >= 1 && login.length < 5) {
-            setError('Логин менее 5 символов!')
+            setError('Логин менее 5 символов!');
+            return false;
         } else if (password.length >= 1 && password.length < 6) {
-            setError('Пароль менее 6 символов!')
+            setError('Пароль менее 6 символов!');
+            return false;
         } else if (password.length >= 6 && oldUser && oldUser.password !== password) {
-            setError('Пароль введен не верно')
+            setError('Пароль введен не верно');
+            return false;
         } else if (login.length >= 5 && !oldUser) {
-            setError('Пользователя не существует')
-        } else (setError(''))
-    }
+            setError('Пользователя не существует');
+            return false;
+        } else {
+            setError('');
+            return true;
+        }
+    };
 
-    let logIn = () => {
-        checkError()
-        usersData.find((item) => {
-            if (!error && item.login === login && item.password === password) {
-                return (dispatch(isAuth(true)), dispatch(addIdUSer(item.id)))
+    const logIn = () => {
+        if (checkError()) {
+            const user = usersData.find((item) => item.login === login && item.password === password);
+            if (user) {
+                dispatch(isAuth(true));
+                dispatch(addIdUSer(user.id));
             }
-        })
-
-    }
+        }
+    };
     useEffect(() => {
         if (isAuthState) {
             navigate('/tasks')
         }
     }, [isAuthState, navigate])
+
 
 
     return (
