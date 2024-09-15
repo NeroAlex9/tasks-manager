@@ -1,5 +1,6 @@
 @import "../../App.scss";
-.input{
+
+.input {
   background: none;
   box-sizing: border-box;
   border: 1px solid $orange;
@@ -9,41 +10,52 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
- color: white;
- margin-bottom: 30px;
-  &::placeholder{
+  color: white;
+  margin-bottom: 30px;
+
+  &::placeholder {
     padding-left: 11px;
     color: $gray;
 
   }
-  &:focus{
+
+  &:focus {
     transform: scale(1.1);
   }
 }
-.form{
-    display: flex;
-    align-items: center;
-    width: 225px;
-    margin: 0 auto;
-    flex-direction: column;
-    &__inlet{
-      margin-bottom: 30px;
-        font-weight: 700;
-        font-size: 25px;
-        color: #fff;
-    }
-    &__button{
-      margin-top: 30px;
-      font-weight: 400;
-      font-size: 16px;
-      color: $orange;
-      background: $blue;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      &:hover{
-        opacity: 80%;
-  
-      }
+
+.form {
+  display: flex;
+  align-items: center;
+  width: 225px;
+  margin: 0 auto;
+  flex-direction: column;
+
+  &__inlet {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 25px;
+    color: #fff;
+  }
+
+  &__button {
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    color: $orange;
+    background: $blue;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 80%;
+
     }
   }
+
+  &__error {
+    color: $orange;
+    padding-bottom: 30px;
+  }
+}

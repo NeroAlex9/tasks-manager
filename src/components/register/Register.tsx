@@ -12,38 +12,36 @@ const Register = () => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [repeatPassword, setRepeatPassword] = useState('')
-    // const [error, setError] = useState(false)
+    const [error, setError] = useState('')
     const users = useSelector((state: RootState) => state.register.people)
 
 
     let checkRegisterData = () => {
-        if (!checkErrorLogin() && !checkErrorPassword() && password === repeatPassword && login && password) {
+        if (!error && password === repeatPassword && login && password) {
             return '/'
         }
         return ''
     }
 
-    let checkErrorLogin = () => {
+    let checkError = () => {
         const userExists = users.find((item) => item.login===login)
         if (login.length >= 1 && login.length < 5) {
-            return <p className={styles.form__error}> Логин менее 5 символов!</p>
+            return setError('Логин менее 5 символов!')
         }
         else if(userExists) {
-            return <p className={styles.form__error}> Логин существует!</p>
+            return setError('Логин существует!')
         }
-    }
-
-    let checkErrorPassword = () => {
         if (password.length>=1 && password.length<6 ) {
-            return <p className={styles.form__error}>Пароль менее 6 символов!</p>
+            return setError('Пароль менее 6 символов!')
         }
         else if (password.length !== repeatPassword.length || password !== repeatPassword) {
-            return <p className={styles.form__error}>Пароли не совпадают!</p>
+            return setError('Пароли не совпадают!')
         }
+        else (setError(''))
     }
 
     let dispatchNewUser = () => {
-        if ( !checkErrorLogin() && !checkErrorPassword() && login && password) {
+        if ( !error && login && password) {
             return () => dispatch(createUser())
         }
         return () => {
@@ -53,6 +51,7 @@ const Register = () => {
     useEffect(() => {
         dispatch(createLogin(login))
         dispatch(createPassword(password))
+        checkError()
     }, [dispatch, login, password, repeatPassword])
 
     return (
@@ -66,7 +65,7 @@ const Register = () => {
                     placeholder="Логин"
                     autoComplete='username'
                 />
-                {checkErrorLogin()}
+
                 <input
                     type='password'
                     onChange={(e) => setPassword(e.target.value)}
@@ -81,7 +80,7 @@ const Register = () => {
                     placeholder="Повторите пароль"
                     autoComplete='new-password'
                 />
-                {checkErrorPassword()}
+                {error && <p className={styles.form__error}>{error}</p>}
             </>
             <NavLink to={checkRegisterData()}>
                 <FormButton onClick={dispatchNewUser()} text="Зарегистрироваться"/>{" "}
