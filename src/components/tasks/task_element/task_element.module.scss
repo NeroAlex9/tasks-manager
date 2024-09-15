@@ -5,8 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 225px;
-  padding: 0 25px 0 25px;
+  margin-left: 35px;
+  padding: 0 20px 0 20px;
   border-bottom: 2px solid black;
   font-weight: 500;
   font-size: 20px;
@@ -39,9 +39,11 @@
   }
 
 }
-@media (max-width: 860px) {
+@media (max-width: 605px) {
   .column{
+    width: 260px;
     margin-left: 10px;
+    padding: 0;
   }
 
 }

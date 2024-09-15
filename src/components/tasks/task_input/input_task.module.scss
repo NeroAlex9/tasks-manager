@@ -1,7 +1,6 @@
 @import "../../../App";
 .text{
     padding-top: 40px;
-    padding-left: 188px;
     font-family: Roboto;
     font-size: 48px;
     font-weight: 700;
@@ -18,7 +17,7 @@
 .input{
     padding-top: 133px;
     padding-bottom: 62px;
-    padding-left: 272px;
+    padding-left: 75px;
     width: 236px;
 
 
@@ -48,12 +47,14 @@
    
     }
 @media (max-width: 860px) {
-    .text {
-        padding-left: 10px;
-    }
-    .input {
-        padding-left: 60px;
+ .input{
+     padding-left: 70px;
+ }
 
-    }
 }
-    
+@media (max-width: 604px) {
+    .input{
+        padding-left: 15px;
+    }
+
+}
