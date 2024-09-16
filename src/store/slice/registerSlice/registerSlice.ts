@@ -1,9 +1,9 @@
-import { createSlice, isAction, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IRegisterState  {
     id:number,
     login: string,
-    password: any,
+    password: string,
     isAuth: boolean,
     people:Array<{ id: number; login: string; password: any}>
 }

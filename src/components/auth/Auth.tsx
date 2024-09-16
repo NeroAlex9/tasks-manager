@@ -4,7 +4,7 @@ import {FormButton} from "../form_button/Form_button";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {RootState} from "../../store/store";
-import {addIdUSer} from "../../store/slice/tasksSlice/tasksSlice";
+import {setIdUSer} from "../../store/slice/tasksSlice/tasksSlice";
 import {isAuth} from "../../store/slice/registerSlice/registerSlice";
 
 
@@ -42,7 +42,7 @@ const Auth = () => {
             const user = usersData.find((item) => item.login === login && item.password === password);
             if (user) {
                 dispatch(isAuth(true));
-                dispatch(addIdUSer(user.id));
+                dispatch(setIdUSer(user.id));
             }
         }
     };

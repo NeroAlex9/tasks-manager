@@ -3,7 +3,7 @@ import '../../../App'
 import styles from "./input_task.module.scss";
 import  {TaskButton} from "../task_button/Task_button";
 import { useDispatch} from "react-redux";
-import { addTask, createTask } from "../../../store/slice/tasksSlice/tasksSlice";
+import { addTask, setTaskText } from "../../../store/slice/tasksSlice/tasksSlice";
 
 
 
@@ -11,7 +11,7 @@ function InputTask() {
   const dispatch = useDispatch()
 const[task, setTask]=useState('')
 useEffect(()=>{
-dispatch(createTask(task))
+dispatch(setTaskText(task))
 },[dispatch,task])
 
 let addNewTask = ()=>{

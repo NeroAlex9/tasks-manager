@@ -19,11 +19,11 @@ export const tasksSlice = createSlice({
     name: "Tasks",
     initialState,
     reducers:{
-        addIdUSer:(state, action: PayloadAction<number>)=>{
+        setIdUSer:(state, action: PayloadAction<number>)=>{
             state.idUser=action.payload
 
         },
-        createTask: (state, action: PayloadAction<string>)=>{
+        setTaskText: (state, action: PayloadAction<string>)=>{
             state.text = action.payload
         },
         addTask:(state)=>{
@@ -31,16 +31,11 @@ export const tasksSlice = createSlice({
             state.idTask+=1
         },
         deleteTask:(state,action: PayloadAction<number> )=>{
-            state.tasks.find((item, index)=>{
-                if(item && item.idTask===action.payload){
-                   delete state.tasks[index]
-                }
-                return ''
-            })
+            state.tasks = state.tasks.filter(task => task.idTask !== action.payload)
         }
 
     }
 })
 
-export const {addIdUSer,createTask, addTask, deleteTask} = tasksSlice.actions
+export const {setIdUSer,setTaskText, addTask, deleteTask} = tasksSlice.actions
 export default tasksSlice.reducer
