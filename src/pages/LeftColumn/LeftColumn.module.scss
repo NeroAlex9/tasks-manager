@@ -8,11 +8,22 @@
   background-color: $blue;
   transition: left 1s ease;
 }
+
+
+
 @media (max-width: 635px) {
   .column{
+    
     position: fixed;
     height: 100%;
     left: -579px;
+  }
+  .burger{
+    margin-top: 400px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: $blue;
   }
 
 
