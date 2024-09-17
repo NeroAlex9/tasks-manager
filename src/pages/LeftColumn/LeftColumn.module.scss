@@ -6,10 +6,14 @@
   width: 579px;
   height: auto;
   background-color: $blue;
+  transition: left 1s ease;
 }
-@media (max-width: 605px) {
+@media (max-width: 635px) {
   .column{
     position: fixed;
-  left: -579px;
+    height: 100%;
+    left: -579px;
   }
+
+
 }
