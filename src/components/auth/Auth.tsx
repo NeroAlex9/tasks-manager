@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {RootState} from "../../store/store";
 import {setIdUSer} from "../../store/slice/tasksSlice/tasksSlice";
-import {isAuth} from "../../store/slice/registerSlice/registerSlice";
+import {isAuth, setId, setLoginAuth} from "../../store/slice/authSlice/authSlice";
 
 
 const Auth = () => {
@@ -14,7 +14,7 @@ const Auth = () => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const usersData = useSelector((state: RootState) => state.register.people)
-    const isAuthState = useSelector((state: RootState) => state.register.isAuth)
+    const isAuthState = useSelector((state: RootState) => state.auth.isAuth)
     const navigate = useNavigate()
 
     const checkError = () => {
@@ -40,9 +40,11 @@ const Auth = () => {
     const logIn = () => {
         if (checkError()) {
             const user = usersData.find((item) => item.login === login && item.password === password);
-            if (user) {
-                dispatch(isAuth(true));
+            if (user) { 
                 dispatch(setIdUSer(user.id));
+                dispatch(setId(user.id));
+                dispatch(setLoginAuth(user.login));
+                dispatch(isAuth(true));
             }
         }
     };

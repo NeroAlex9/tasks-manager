@@ -1,5 +1,14 @@
+@import './../../App.scss';
+
 .button{
   display: flex;
   justify-content: center;
-  min-width: 210px;
+  min-width: 200px;
+}
+
+.name{
+  color: $orange;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
 }

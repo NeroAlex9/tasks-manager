@@ -11,7 +11,7 @@ function LeftColumn() {
             <Routes>
                 <Route path="/"element={<Auth/>}/>
                 <Route path="/register" element={<Register/>}/>
-                <Route path="tasks" element={<Output/>}/>
+                <Route path="/tasks" element={<Output/>}/>
             </Routes>
         </div>
     );

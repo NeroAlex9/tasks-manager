@@ -5,7 +5,7 @@ interface IRegisterState  {
     login: string,
     password: string,
     isAuth: boolean,
-    people:Array<{ id: number; login: string; password: any}>
+    people:Array<{ id: number; login: string; password: string}>
 }
 
 const initialState: IRegisterState = {
@@ -23,19 +23,16 @@ export const registerSlice = createSlice({
         createLogin: (state, action: PayloadAction<string>)=>{
             state.login = action.payload
         },
-        createPassword: (state, action: PayloadAction<any>)=>{
+        createPassword: (state, action: PayloadAction<string>)=>{
             state.password = action.payload
         },
         createUser:(state)=>{
             state.people.push({id:state.id, login:state.login, password:state.password})
             state.id+=1
-        },
-        isAuth:(state, action: PayloadAction<boolean>)=>{
-            state.isAuth=action.payload
         }
 
     }
 })
 
-export const {createLogin, createPassword, createUser, isAuth} = registerSlice.actions
+export const {createLogin, createPassword, createUser} = registerSlice.actions
 export default registerSlice.reducer
