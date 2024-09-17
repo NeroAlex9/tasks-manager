@@ -7,3 +7,9 @@
   height: auto;
   background-color: $blue;
 }
+@media (max-width: 605px) {
+  .column{
+    position: fixed;
+  left: -579px;
+  }
+}

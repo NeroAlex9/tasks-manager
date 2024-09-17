@@ -10,6 +10,7 @@ import {RootState} from "../../store/store";
 const Output= () => {
     let dispatch= useDispatch()
     const loginUser = useSelector((state: RootState) => state.auth.login)
+    
     return (
         <div> 
             <p className={styles.name}>Привет: {loginUser}</p>
