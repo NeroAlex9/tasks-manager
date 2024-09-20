@@ -1,11 +1,12 @@
 @import "../../../App";
 .column{
-  width: 275px;
+  min-width: 236px;
+  max-width: 275px;
   min-height: 62px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 35px;
+  margin-left: 50px;
   padding: 0 20px 0 20px;
   border-bottom: 2px solid black;
   font-weight: 500;

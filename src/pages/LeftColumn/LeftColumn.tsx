@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./LeftColumn.module.scss";
 import Auth from "../../components/auth/Auth";
 import {Route, Routes} from "react-router-dom";
@@ -6,19 +6,17 @@ import Output from "../../components/output/Output";
 import Register from "../../components/register/Register";
 
 
-
 function LeftColumn() {
+    const [columnStyle, setColumnStyle] = useState(true)
+    const toggleClass = ()=>{
+        setColumnStyle(!columnStyle)
+    }
+
     return (<>
-    
-        <div className={styles.column}>
-            <Routes>
-                <Route path="/"element={<Auth/>}/>
-                <Route path="/register" element={<Register/>}/>
-                <Route path="/tasks" element={<Output/>}/>
-            </Routes>
-            </div>
-            <div className={styles.burger}>
+        <div className={columnStyle ? styles.column : styles.column1}>
+        <div onClick={()=>{ toggleClass()}} className={styles.column__burger}>
             <svg
+            className={styles.svg}
                 width="48"
                 height="28"
                 viewBox="0 0 48 28"
@@ -32,6 +30,14 @@ function LeftColumn() {
                 />
             </svg>
         </div>
+            <Routes>
+                <Route path="/"element={<Auth/>}/>
+                <Route path="/register" element={<Register/>}/>
+                <Route path="/tasks" element={<Output/>}/>
+            </Routes>
+            
+            </div>
+        
         </>
     );
 }

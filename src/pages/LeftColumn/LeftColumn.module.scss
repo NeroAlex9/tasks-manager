@@ -6,25 +6,42 @@
   width: 579px;
   height: auto;
   background-color: $blue;
-  transition: left 1s ease;
+  &__burger{
+    display: none;
+    position: fixed;
+    top: 420px;
+    left: 0px;
+    background-color: $blue;
+  }
 }
+
 
 
 
 @media (max-width: 635px) {
   .column{
-    
     position: fixed;
     height: 100%;
-    left: -579px;
+    left: -529px;
+    &__burger{
+      display: block;
+    }
   }
-  .burger{
-    margin-top: 400px;
+  .column1{
+    position: fixed;
+    height: 100%;
+    padding-top: 206px;
     display: flex;
-    align-items: center;
-    height: 50px;
+    flex-direction: column;
+    width: 100%;
     background-color: $blue;
+    .svg{
+      transform: scaleX(-1);
+    }
+
   }
+  
+ 
 
 
 }
